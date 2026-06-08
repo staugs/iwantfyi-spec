@@ -10,9 +10,25 @@ The iwant.fyi demand-side protocol fills that gap.
 
 ## Spec
 
-- [v1.0 (Draft)](./v1.md) — Current
+- [v1.1 (Draft)](./v1.md) — Current. Additive, backward-compatible with v1.0: signed webhooks for
+  Standing Wants (§16), partial-result transparency (§6.1), retryable error taxonomy (§11.2),
+  idempotency keys (§8.4), capability discovery (§8.2), deterministic ordering + cursor (§6.3).
 
 Read it rendered with anchors at [iwant.fyi/protocol/v1](https://iwant.fyi/protocol/v1).
+
+JSON Schema for the core objects: [`schemas/1.1/`](./schemas/1.1/) (also served live at
+`https://iwant.fyi/.well-known/iwantfyi/schemas/1.1/`).
+
+## Conformance
+
+A test kit verifies any implementation against [spec §15](./v1.md#15-conformance):
+
+```bash
+npx @iwantfyi/conformance-kit --mcp https://iwant.fyi/api/mcp --http https://iwant.fyi/api/v1 --api-key <key>
+```
+
+Source: [`conformance-kit/`](./conformance-kit/) · npm: `@iwantfyi/conformance-kit` (Apache-2.0). The
+reference implementation also self-reports at [`/api/v1/conformance`](https://iwant.fyi/api/v1/conformance).
 
 ## Reference implementation
 
@@ -33,7 +49,7 @@ Three open-source example agents at [staugs/iwantfyi-examples](https://github.co
 
 ## Status
 
-v1.0 is published as a draft for public comment. Feedback, issues, and proposed extensions are welcome via [GitHub issues](https://github.com/staugs/iwantfyi-spec/issues) or directly to `hi@iwant.fyi`.
+v1.1 is published as a draft for public comment. Feedback, issues, and proposed extensions are welcome via [GitHub issues](https://github.com/staugs/iwantfyi-spec/issues) or directly to `hi@iwant.fyi`.
 
 ## License
 

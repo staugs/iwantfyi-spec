@@ -1,0 +1,44 @@
+{
+  "name": "@iwantfyi/conformance-kit",
+  "version": "1.1.0",
+  "description": "Conformance test kit for the iwant.fyi demand-side protocol (v1.1). Points at any MCP server URL and verifies spec section 15 compliance, including the v1.1 additions (signed webhooks, error taxonomy, idempotency, capabilities, transparency).",
+  "type": "module",
+  "bin": {
+    "iwantfyi-conformance": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "tsc",
+    "start": "node dist/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://iwant.fyi/protocol/v1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staugs/iwantfyi-spec.git",
+    "directory": "conformance-kit"
+  },
+  "bugs": {
+    "url": "https://github.com/staugs/iwantfyi-spec/issues"
+  },
+  "keywords": [
+    "iwant.fyi",
+    "demand-protocol",
+    "mcp",
+    "agentic-commerce",
+    "conformance",
+    "spec"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
